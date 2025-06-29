@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017/service_db
+  cache:
+    type: simple
+
+logging:
+  level:
+    root: INFO
