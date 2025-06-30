@@ -4,8 +4,9 @@ This repository contains a full stack service management system, composed of:
 
 - [`service-manager`](./service-manager): Angular frontend application
 - [`services`](./services): Spring Boot backend API with MongoDB
+- [`go-http-client-batch`](./go-http-client-batch): **HTTP client written in Go** for parallel request batching
 
-Both services are fully containerized with Docker and can be run locally using Docker Compose.
+The **services** and **service-manager** are fully containerized with Docker and can be run locally using Docker Compose.
 
 ## Getting Started
 
@@ -15,6 +16,7 @@ Both services are fully containerized with Docker and can be run locally using D
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Java 21](https://openjdk.org/projects/jdk/21/) (for local backend builds)
 - [Node.js and npm](https://nodejs.org/) (for local frontend dev)
+- [Go 1.20+](https://go.dev/dl) (to run the batch)
 
 ---
 
