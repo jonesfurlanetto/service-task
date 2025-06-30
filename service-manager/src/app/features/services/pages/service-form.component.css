@@ -1,0 +1,21 @@
+form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: inline-block;
+    width: 120px;
+    margin-top: 8px;
+  }
+  
+  input {
+    padding: 4px;
+    margin-bottom: 8px;
+    width: 60%;
+  }
+  
+  button {
+    margin: 8px 4px 8px 0;
+  }
+  

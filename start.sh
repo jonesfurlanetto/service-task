@@ -1,10 +1,22 @@
-echo "Cleaning and packaging backend service with Maven..."
-mvn -f services/pom.xml clean package -DskipTests
+set -e
 
-if [ $? -ne 0 ]; then
-    echo "Maven build failed. Aborting..."
-    exit 1
-fi
+echo "=== Backend - Navegando até a pasta 'services'..."
+cd services
 
-echo "Starting Docker Compose..."
-docker-compose -f services/docker-compose.yml up --build
+echo "=== Backend - Build do projeto com Maven..."
+mvn clean package -DskipTests
+
+echo "=== Backend - Subindo containers com Docker Compose..."
+docker-compose up --build -d
+
+cd ..
+
+echo "=== Frontend - Navegando até a pasta 'service-manager'..."
+cd service-manager
+
+echo "=== Frontend - Subindo containers com Docker Compose..."
+docker-compose up --build -d
+
+cd ..
+
+echo "=== Todos os serviços estão em execução com sucesso!"

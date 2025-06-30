@@ -1,0 +1,22 @@
+<div>
+    <h2>Services</h2>
+    <button (click)="createService()">New Service</button>
+    <table border="1" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let service of services">
+          <td>{{ service.id }}</td>
+          <td>
+            <button (click)="viewService(service.id)">View</button>
+            <button (click)="editService(service.id)">Edit</button>
+            <button (click)="deleteService(service.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

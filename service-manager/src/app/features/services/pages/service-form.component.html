@@ -1,0 +1,31 @@
+<div>
+  <h3>{{ isEdit ? 'Edit' : 'New' }} Service</h3>
+  <form (ngSubmit)="save()">
+    <label>ID:</label>
+    <input [(ngModel)]="service.id" name="id" required [readonly]="isEdit" />
+
+    <h4>Resources</h4>
+    <button type="button" (click)="addResource()">+ Add Resource</button>
+
+    <div *ngFor="let resource of service.resources; let rIdx = index">
+      <hr />
+      <label>Resource ID:</label>
+      <input [(ngModel)]="resource.id" name="res{{rIdx}}id" placeholder="Resource ID" />
+
+      <h5>Owners</h5>
+      <button type="button" (click)="addOwner(rIdx)">+ Add Owner</button>
+
+      <div *ngFor="let owner of resource.owners; let oIdx = index" style="margin-left: 20px;">
+        <label>Name:</label>
+        <input [(ngModel)]="owner.name" name="own{{rIdx}}{{oIdx}}name" placeholder="Name" />
+        <label>Account:</label>
+        <input [(ngModel)]="owner.accountNumber" name="own{{rIdx}}{{oIdx}}acc" placeholder="Account" />
+        <label>Level:</label>
+        <input [(ngModel)]="owner.level" name="own{{rIdx}}{{oIdx}}lvl" placeholder="Level" type="number" />
+      </div>
+    </div>
+
+    <br />
+    <button type="submit">Save</button>
+  </form>
+</div>

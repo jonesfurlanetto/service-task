@@ -1,0 +1,11 @@
+<div *ngIf="service">
+    <h3>Service ID: {{ service.id }}</h3>
+    <div *ngFor="let resource of service.resources">
+      <strong>Resource: {{ resource.id }}</strong>
+      <ul>
+        <li *ngFor="let owner of resource.owners">
+          {{ owner.name }} ({{ owner.accountNumber }}) - Level {{ owner.level }}
+        </li>
+      </ul>
+    </div>
+  </div>

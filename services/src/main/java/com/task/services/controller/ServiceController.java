@@ -16,6 +16,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,7 @@ import java.util.stream.Collectors;
         name = "CRUD REST APIs for Service",
         description = "CRUD REST APIs to CREATE, UPDATE, FETCH, GETALL AND DELETE service details"
 )
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/services")
 public class ServiceController {
